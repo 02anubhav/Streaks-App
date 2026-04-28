@@ -70,7 +70,6 @@ export function HabitApp() {
              flex items-center justify-between gap-3"
           style={{ borderBottom: "1px solid var(--border)" }}
         >
-          {/* LEFT SIDE */}
           <div className="min-w-0 flex-1">
             <h1
               className="font-serif font-medium tracking-tight leading-tight 
@@ -87,9 +86,7 @@ export function HabitApp() {
             </p>
           </div>
 
-          {/* RIGHT SIDE */}
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-            {/* Week View */}
             <button
               onClick={() => setWeekViewOpen((v) => !v)}
               className="inline-flex items-center justify-center gap-1
@@ -107,13 +104,11 @@ export function HabitApp() {
             >
               ⊡
               <span className="ml-1 sm:ml-1.5">
-                {/* shorter text on mobile */}
                 <span className="sm:hidden">Week</span>
                 <span className="hidden sm:inline">Week view</span>
               </span>
             </button>
 
-            {/* New Habit */}
             <button
               onClick={() => setModalOpen(true)}
               className="inline-flex items-center justify-center gap-1
@@ -137,9 +132,8 @@ export function HabitApp() {
             </button>
           </div>
         </div>
-       
-        <div className="px-9 py-7">
-          
+
+        <div className="px-4 py-7">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 mb-7">
             <StatCard
               label="Today's Progress"
@@ -197,7 +191,6 @@ export function HabitApp() {
             />
           </div>
 
-          
           {weekViewOpen && (
             <div className="mb-6 animate-fade-in-up">
               <div className="flex items-center justify-between mb-3">
@@ -214,9 +207,7 @@ export function HabitApp() {
             </div>
           )}
 
-          
           <div className="grid grid-cols-1 xl:grid-cols-[1fr_380px] gap-5">
-            
             <div>
               <div className="flex items-center justify-between mb-3.5">
                 <div className="text-[15px] font-medium">Today's habits</div>
@@ -256,7 +247,6 @@ export function HabitApp() {
                     </div>
                   )
                 ) : (
-                  
                   Array.from({ length: 5 }).map((_, i) => (
                     <div
                       key={i}
@@ -268,7 +258,6 @@ export function HabitApp() {
               </div>
             </div>
 
-           
             <div className="flex flex-col gap-4">
               <QuoteCard />
               <CategoryRings habits={habits} />
@@ -278,14 +267,12 @@ export function HabitApp() {
         </div>
       </main>
 
-      
       <AddHabitModal
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         onAdd={handleAdd}
       />
 
-      
       <ToastContainer toasts={toasts} />
     </div>
   );
